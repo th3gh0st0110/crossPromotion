@@ -10,14 +10,14 @@
 
         .logo {
             position: absolute;
-            top: 12px;
+            top: 16px;
             left: 24px;
         }
 
         .btn_close {
             position: absolute;
             right: 24px;
-            top: 12px;
+            top: 16px;
         }
 
     </style>
