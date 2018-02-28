@@ -19,6 +19,9 @@
             right: 24px;
             top: 16px;
         }
+        .btn_close:active{
+            transform: scale(1.05);
+        }
 
     </style>
 </head>
@@ -32,8 +35,9 @@
 
 <script>
     function CloseWindow() {
-
-    };
+        var objWindow = window.open(location.href,"_self");
+        objWindow.close();
+    }
 </script>
 
 </body>

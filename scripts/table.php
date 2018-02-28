@@ -21,13 +21,8 @@
 <table class="scroll">
     <tbody>
     <?php
-    require_once 'CrossPromotionConfig.php';
-    require_once 'RowInfo.php';
-    require_once 'JsonMapper.php';
     $json = json_decode(file_get_contents(__DIR__.'/../config/CrossPromotionConfig.txt'));
-    $mapper = new JsonMapper();
-    $config = $mapper->map($json,new CrossPromotionConfig());
-    $arrayItem = ConvertToArray($config);
+    $arrayItem = ConvertToArray($json);
     for ($i = 0;$i<count($arrayItem);$i++){
         echo  "<tr>\n";
         echo "<td>\n";
@@ -36,15 +31,6 @@
         echo "</td>\n";
         echo "</tr>\n";
     }
-//    foreach ($config->items as $value){
-//        echo  "<tr>\n";
-//        echo "<td>\n";
-//        $GLOBALS['row']=$value;
-//        include('./scripts/row.php');
-//        echo "</td>\n";
-//        echo "</tr>\n";
-//    }
-
 
     function ConvertToArray($dict){
         $a = new ArrayObject();
@@ -73,7 +59,6 @@
         }
         return $array;
     }
-
     ?>
     </tbody>
 </table>
