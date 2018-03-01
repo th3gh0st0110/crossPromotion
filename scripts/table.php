@@ -3,17 +3,39 @@
     <style>
         table.scroll{
             width: 1280px;
-            height: 980px;
+            height: 720px;
             position: relative;
-            top: 12px;
+            top: 6px;
         }
         table.scroll tbody {
             overflow-y: hidden;
             display: block;
         }
         td{
-            padding-top: 12px;
-            padding-bottom: 12px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+        @media (-webkit-min-device-pixel-ratio: 2) {
+            table.scroll{
+                width: calc(1280px/2);
+                height: calc(720px/2);
+                top: calc(6px/2);
+            }
+            td{
+                padding-top: calc(6px/2);
+                padding-bottom: calc(6px/2);
+            }
+        }
+        @media (-webkit-min-device-pixel-ratio: 3) {
+            table.scroll{
+                width: calc(1280px/3);
+                height: calc(720px/3);
+                top:calc(6px/3);
+            }
+            td{
+                padding-top: calc(6px/3);
+                padding-bottom: calc(6px/3);
+            }
         }
     </style>
 </head>
