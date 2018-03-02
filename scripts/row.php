@@ -1,116 +1,118 @@
 <html>
 <head>
     <style>
-        body {
-            font-family: Tahoma;
-        }
-
-        .rowbackground {
-            border: 4px solid;
+        #rowbackground {
+            border: 0.04rem solid;
             border-image: url('./images/row_background.png');
-            border-image-slice: 25 fill;
-            height: 128px;
-            width: 1208px;
+            border-image-slice: 10 fill;
+            height: 1.2rem;
+            width: 12.08rem;
             position: relative;
-            left: 36px;
+            left: calc(50vw - 6.5rem);
         }
 
-        .icon {
+        #icon img {
             position: relative;
-            left: 12px;
-            top: 12px;
-            width: 104px;
-            height: 104px;
+            left: 0.12rem;
+            top: 0.12rem;
+            width: 0.96rem;
+            height: 0.96rem;
         }
 
         name {
             position: absolute;
-            left: 130px;
+            left: 1.30rem;
             text-align: left;
-            top: 20px;
-            font-size: 24px;
+            top: 0.20rem;
+            font-size: 0.24rem;
         }
 
         desc {
             position: absolute;
-            left: 130px;
+            left: 1.30rem;
             text-align: left;
-            top: 50px;
-            font-size: 24px;
+            top: 0.50rem;
+            font-size: 0.24rem;
         }
 
-        .buttonClaim {
+        #buttonClaim {
             position: absolute;
-            right: 12px;
-            top: 12px;
+            right: 0.12rem;
+            top: 0.12rem;
         }
-        .buttonClaim:active{
-            transform: scale(1.05);
+        #btnImage:active {
+            -webkit-transform: scale(1.05);
         }
-        .rewardType {
+
+        #btnImage img {
+            width: 2.24rem;
+            height: 0.96rem;
+        }
+
+        #rewardType {
             text-align: center;
             position: relative;
-            bottom: 85px;
-            font-size: 24px;
-            color: white;
-            pointer-events: none;
-        }
-        .rewardValue {
-            text-align: center;
-            position: relative;
-            bottom: 85px;
-            font-size: 24px;
+            bottom: 0.8rem;
+            font-size: 0.24rem;
             color: white;
             pointer-events: none;
         }
 
-        .progressBackground {
-            border: 6px solid;
+        #rewardValue {
+            text-align: center;
+            position: relative;
+            bottom: 0.8rem;
+            font-size: 0.24rem;
+            color: white;
+            pointer-events: none;
+        }
+
+        #progressBackground {
+            border: 0.06rem solid;
             border-image: url('./images/progress_background.png');
             border-image-slice: 5 fill;
-            height: 4px;
+            height: 0.04rem;
             position: absolute;
-            left: 130px;
-            bottom: 12px;
-            width: 500px;
+            left: 1.30rem;
+            bottom: 0.12rem;
+            width: 5rem;
         }
 
         .progressForeground {
-            border: 6px solid;
+            border: 0.06rem solid;
             border-image: url('./images/progress_foreground.png');
             border-image-slice: 5 fill;
-            height: 4px;
+            height: 0.04rem;
             width: 0;
             position: absolute;
-            left: -5px;
-            bottom: -6px;
+            left: -0.05rem;
+            bottom: -0.06rem;
         }
 
         .progressText {
             position: relative;
             text-align: center;
-            bottom: 7px;
-            font-family: Tahoma;
-            font-size: 14px;
+            bottom: 0.07rem;
+            font-size: 0.14rem;
         }
     </style>
-
+<script></script>
 </head>
 <body>
-<div class="rowbackground">
-    <img src="<?php echo './images/' . $GLOBALS['row']->icon ?>" class="icon">
+<div id="rowbackground">
+    <div id="icon"><img src="<?php echo './images/' . $GLOBALS['row']->icon ?>"></div>
     <name><b><?php echo $GLOBALS['row']->name ?></b></name>
     <desc><?php echo $GLOBALS['row']->description ?></desc>
-    <div class="buttonClaim">
-        <input type="image" src="./images/btn_claim.png" class="btnImage" onclick="ClickClaim()">
-        <div class="rewardValue">
+    <div id="buttonClaim">
+        <div id="btnImage"><img src="./images/btn_claim.png" onclick="ClickClaim(<?php echo $index =$GLOBALS['rowIndex'];?>)"></div>
+        <div id="rewardValue">
             <b>
                 <?php
                 echo number_format($GLOBALS['row']->reward);
                 ?>
             </b>
         </div>
-        <div class="rewardType">
+        <div id="rewardType">
             <b>
                 <?php
                 echo $GLOBALS['row']->rewardType;
@@ -118,7 +120,7 @@
             </b>
         </div>
     </div>
-    <div class="progressBackground">
+    <div id="progressBackground">
         <div class="progressForeground"></div>
         <div class="progressText">100000</div>
     </div>
@@ -126,17 +128,20 @@
 
 </body>
 <script>
-    function SetProgressValue($progress) {
-        var elem = document.getElementsByClassName("progressForeground")[0];
-        elem.style.width = $progress*500;
+    function SetProgressValue(index,progress) {
+        var elem =document.getElementsByClassName("progressForeground")[index];
+        elem.style.width = progress * 5 + "rem";
     }
 
-    function SetProgressText($text) {
-        var elem2 = document.getElementsByClassName("progressText")[0];
-        elem2.innerText = $text;
+    function SetProgressText(index,text) {
+         var elem2 = document.getElementsByClassName("progressText")[index];
+         elem2.innerText = text;
     }
-    function ClickClaim() {
 
+    function ClickClaim(index) {
+        SetProgressValue(index,0.5);
+        SetProgressText(index,100);
     }
+
 </script>
 </html>

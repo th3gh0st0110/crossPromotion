@@ -2,40 +2,19 @@
 <head>
     <style>
         table.scroll{
-            width: 1280px;
-            height: 720px;
+            width: 100%;
+            height: 100vh;
             position: relative;
-            top: 6px;
+            top: -0.06rem;
         }
         table.scroll tbody {
+            overflow-x: hidden;
             overflow-y: hidden;
             display: block;
         }
         td{
-            padding-top: 6px;
-            padding-bottom: 6px;
-        }
-        @media (-webkit-min-device-pixel-ratio: 2) {
-            table.scroll{
-                width: calc(1280px/2);
-                height: calc(720px/2);
-                top: calc(6px/2);
-            }
-            td{
-                padding-top: calc(6px/2);
-                padding-bottom: calc(6px/2);
-            }
-        }
-        @media (-webkit-min-device-pixel-ratio: 3) {
-            table.scroll{
-                width: calc(1280px/3);
-                height: calc(720px/3);
-                top:calc(6px/3);
-            }
-            td{
-                padding-top: calc(6px/3);
-                padding-bottom: calc(6px/3);
-            }
+            padding-top: 0.06rem;
+            padding-bottom: 0.06rem;
         }
     </style>
 </head>
@@ -49,6 +28,7 @@
         echo  "<tr>\n";
         echo "<td>\n";
         $GLOBALS['row']=$arrayItem[$i];
+        $GLOBALS['rowIndex']=$i;
         include('./scripts/row.php');
         echo "</td>\n";
         echo "</tr>\n";
