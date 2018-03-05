@@ -11,7 +11,7 @@
             left: calc(50vw - 6.5rem);
         }
 
-        #icon img {
+        .icon img {
             position: relative;
             left: 0.12rem;
             top: 0.12rem;
@@ -19,15 +19,16 @@
             height: 0.96rem;
         }
 
-        name {
+        .achievementName {
             position: absolute;
             left: 1.30rem;
             text-align: left;
             top: 0.20rem;
             font-size: 0.24rem;
+           font-weight: bold;
         }
 
-        desc {
+        .desc {
             position: absolute;
             left: 1.30rem;
             text-align: left;
@@ -40,31 +41,34 @@
             right: 0.12rem;
             top: 0.12rem;
         }
-        #btnImage:active {
+
+        .btnImage:active {
             -webkit-transform: scale(1.05);
         }
 
-        #btnImage img {
+        .btnImage img {
             width: 2.24rem;
             height: 0.96rem;
         }
 
-        #rewardType {
+        .rewardType {
             text-align: center;
             position: relative;
             bottom: 0.8rem;
             font-size: 0.24rem;
             color: white;
             pointer-events: none;
+            font-weight: bold;
         }
 
-        #rewardValue {
+        .rewardValue {
             text-align: center;
             position: relative;
             bottom: 0.8rem;
             font-size: 0.24rem;
             color: white;
             pointer-events: none;
+            font-weight: bold;
         }
 
         #progressBackground {
@@ -96,52 +100,89 @@
             font-size: 0.14rem;
         }
     </style>
-<script></script>
+    <script></script>
 </head>
 <body>
 <div id="rowbackground">
-    <div id="icon"><img src="<?php echo './images/' . $GLOBALS['row']->icon ?>"></div>
-    <name><b><?php echo $GLOBALS['row']->name ?></b></name>
-    <desc><?php echo $GLOBALS['row']->description ?></desc>
-    <div id="buttonClaim">
-        <div id="btnImage"><img src="./images/btn_claim.png" onclick="ClickClaim(<?php echo $index =$GLOBALS['rowIndex'];?>)"></div>
-        <div id="rewardValue">
-            <b>
-                <?php
-                echo number_format($GLOBALS['row']->reward);
-                ?>
-            </b>
-        </div>
-        <div id="rewardType">
-            <b>
-                <?php
-                echo $GLOBALS['row']->rewardType;
-                ?>
-            </b>
-        </div>
-    </div>
+    <div class="icon"><img src=""></div>
+    <div class="achievementName"><b></b></div>
+    <div class="desc"></div>
     <div id="progressBackground">
         <div class="progressForeground"></div>
         <div class="progressText">100000</div>
     </div>
+    <div id="buttonClaim">
+        <div class="btnImage"><img src="" onclick="ClickClaim()"></div>
+        <div class="rewardValue"><b></b></div>
+        <div class="rewardType"><b></b></div>
+    </div>
 </div>
-
 </body>
 <script>
-    function SetProgressValue(index,progress) {
-        var elem =document.getElementsByClassName("progressForeground")[index];
+
+    function ApplyInfo(config) {
+        SetIcon(config);
+        SetName(config);
+        SetDesc(config);
+        SetButtonImage(config);
+        SetRewardValue(config);
+        SetRewardType(config);
+    }
+
+    function SetIcon(config) {
+        var iconUrl = "./images/" + config["icon"];
+        document.getElementsByClassName("icon")[index].getElementsByTagName("img")[0].src = iconUrl;
+    }
+
+    function SetName(config) {
+        var name = config["name"];
+        document.getElementsByClassName("achievementName")[index].innerHTML = name;
+    }
+
+    function SetDesc(config) {
+        var name = config["description"];
+        document.getElementsByClassName("desc")[index].innerHTML = name;
+    }
+
+    function SetButtonImage(config) {
+        var iconUrl = "./images/btn_claim.png";
+        document.getElementsByClassName("btnImage")[index].getElementsByTagName("img")[0].src = iconUrl;
+    }
+
+    function SetRewardValue(config) {
+        var name = config["reward"];
+        document.getElementsByClassName("rewardValue")[index].innerHTML = name;
+    }
+
+    function SetRewardType(config) {
+        var name = config["rewardType"];
+        document.getElementsByClassName("rewardType")[index].innerHTML = name;
+    }
+
+    function SetProgressValue(index, progress) {
+        var elem = document.getElementsByClassName("progressForeground")[index];
         elem.style.width = progress * 5 + "rem";
     }
 
-    function SetProgressText(index,text) {
-         var elem2 = document.getElementsByClassName("progressText")[index];
-         elem2.innerText = text;
+    function SetProgressText(index, text) {
+        var elem2 = document.getElementsByClassName("progressText")[index];
+        elem2.innerText = text;
     }
 
-    function ClickClaim(index) {
-        SetProgressValue(index,0.5);
-        SetProgressText(index,100);
+    function ClickClaim() {
+        SetProgressValue(index, 0.5);
+        SetProgressText(index, 100);
     }
 
+
+    function Log(text) {
+        var t = document.createTextNode(text);
+        document.body.appendChild(t);
+    }
+
+    var index = sessionStorage.getItem("currentRowIndex");
+    var Config = sessionStorage.getItem("Config");
+    var obj = JSON.parse(Config);
+    ApplyInfo(obj[index]);
 </script>
 </html>

@@ -1,0 +1,86 @@
+<html>
+<head>
+    <style>
+        .scroll {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            top: -0.06rem;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            display: block;
+        }
+        tbody {
+            overflow-y: hidden;
+            display: block;
+        }
+        #row1,#row2 {
+            padding-top: 0.06rem;
+            padding-bottom: 0.06rem;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<table class="scroll">
+    <tbody>
+    </tbody>
+</table>
+<script>
+    function CreateTable(arrayConfig){
+        var body = document.body,
+            tbl  = document.getElementsByClassName("scroll")[0];
+        var lenght = arrayConfig.length;
+        lenght =5;
+        for(var i = 0; i < lenght; i++){
+            var tr = tbl.insertRow();
+            var rowId="row"+i;
+            tr.id=rowId;
+        }
+        body.appendChild(tbl);
+        sessionStorage.setItem("currentRowIndex",0);
+        for(var i = 0; i < lenght; i++){
+            var rowId="#row"+i;
+            $(rowId).load("row.php",function () {
+                var next = parseInt(sessionStorage.getItem("currentRowIndex"))+1;
+                sessionStorage.setItem("currentRowIndex",next);
+            });
+        }
+    }
+
+    function bubbleSort(array) {
+        var array_size = array.length;
+        for(i = 0; i < array_size; i ++) {
+            for(j = 0; j < array_size; j ++) {
+                if (array[i].id < array[j].id) {
+                    item = array[i];
+                    array[i] = array[j];
+                    array[j] = item;
+                }
+            }
+        }
+        return array;
+    }
+
+    function ConvertToArray(dict) {
+        var array = new Array();
+        for (var key in dict) {
+            array.push(dict[key]);
+        }
+        return bubbleSort(array);
+    }
+    function Log(text) {
+        var t = document.createTextNode(text);
+        document.body.appendChild(t);
+    }
+    jQuery.get("config/CrossPromotionConfig.txt", function (data) {
+        var obj = JSON.parse(data);
+        var dict = obj["items"];
+        var arr = ConvertToArray(dict);
+        sessionStorage.setItem("Config",JSON.stringify(arr));
+        CreateTable(arr);
+    })
+</script>
+
+</body>
+</html>
