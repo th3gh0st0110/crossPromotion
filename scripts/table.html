@@ -6,11 +6,10 @@
             height: 100vh;
             position: relative;
             top: -0.06rem;
-            overflow-x: hidden;
-            overflow-y: hidden;
             display: block;
         }
         tbody {
+            overflow-x: hidden;
             overflow-y: hidden;
             display: block;
         }
@@ -165,6 +164,7 @@
         AchievementConfig.items = arr;
         AchievementProgress=JSON.parse(GetData());
         CreateTable(arr.length);
+        window.location.href="uniwebview://config?value="+data;
     })
 
 </script>

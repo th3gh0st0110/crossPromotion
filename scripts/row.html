@@ -209,8 +209,10 @@
             } else {
                 SetButtonImage(rowIndex, "claimed");
                 ClaimReward(config.id);
+                window.location.href="uniwebview://reward?id="+config.id+"?value="+config.reward+  "&type="+config.rewardType;
             }
         }
+        window.location.href="uniwebview://clickAchievement?id="+config.id;
     }
 
     function ClaimReward(id) {
