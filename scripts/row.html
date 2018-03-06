@@ -120,43 +120,43 @@
 </body>
 <script>
 
-    function ApplyInfo(config) {
-        SetIcon(config);
-        SetName(config);
-        SetDesc(config);
-        SetButtonImage(config);
-        SetRewardValue(config);
-        SetRewardType(config);
+    function ApplyInfo(rowIndex,config) {
+        SetIcon(rowIndex,config);
+        SetName(rowIndex,config);
+        SetDesc(rowIndex,config);
+        SetButtonImage(rowIndex,config);
+        SetRewardValue(rowIndex,config);
+        SetRewardType(rowIndex,config);
     }
 
-    function SetIcon(config) {
+    function SetIcon(rowIndex,config) {
         var iconUrl = "./images/" + config["icon"];
-        document.getElementsByClassName("icon")[index].getElementsByTagName("img")[0].src = iconUrl;
+        document.getElementsByClassName("icon")[rowIndex].getElementsByTagName("img")[0].src = iconUrl;
     }
 
-    function SetName(config) {
+    function SetName(rowIndex,config) {
         var name = config["name"];
-        document.getElementsByClassName("achievementName")[index].innerHTML = name;
+        document.getElementsByClassName("achievementName")[rowIndex].innerHTML = name;
     }
 
-    function SetDesc(config) {
+    function SetDesc(rowIndex,config) {
         var name = config["description"];
-        document.getElementsByClassName("desc")[index].innerHTML = name;
+        document.getElementsByClassName("desc")[rowIndex].innerHTML = name;
     }
 
-    function SetButtonImage(config) {
+    function SetButtonImage(rowIndex,config) {
         var iconUrl = "./images/btn_claim.png";
-        document.getElementsByClassName("btnImage")[index].getElementsByTagName("img")[0].src = iconUrl;
+        document.getElementsByClassName("btnImage")[rowIndex].getElementsByTagName("img")[0].src = iconUrl;
     }
 
-    function SetRewardValue(config) {
+    function SetRewardValue(rowIndex,config) {
         var name = config["reward"];
-        document.getElementsByClassName("rewardValue")[index].innerHTML = name;
+        document.getElementsByClassName("rewardValue")[rowIndex].innerHTML = name;
     }
 
-    function SetRewardType(config) {
+    function SetRewardType(rowIndex,config) {
         var name = config["rewardType"];
-        document.getElementsByClassName("rewardType")[index].innerHTML = name;
+        document.getElementsByClassName("rewardType")[rowIndex].innerHTML = name;
     }
 
     function SetProgressValue(index, progress) {
@@ -169,20 +169,19 @@
         elem2.innerText = text;
     }
 
-    function ClickClaim() {
-        SetProgressValue(index, 0.5);
-        SetProgressText(index, 100);
+    function ClickClaim(rowIndex) {
+        SetProgressValue(rowIndex, 0.5);
+        SetProgressText(rowIndex, 100);
     }
-
-
     function Log(text) {
         var t = document.createTextNode(text);
         document.body.appendChild(t);
     }
-
-    var index = sessionStorage.getItem("currentRowIndex");
-    var Config = sessionStorage.getItem("Config");
-    var obj = JSON.parse(Config);
-    ApplyInfo(obj[index]);
+    function GetConfig(rowIndex) {
+        var Config = sessionStorage.getItem("Config");
+        var obj = JSON.parse(Config);
+        return obj[rowIndex];
+    }
+    ApplyInfo(GetConfig(sessionStorage.getItem("currentRowIndex")));
 </script>
 </html>

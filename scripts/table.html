@@ -14,7 +14,7 @@
             overflow-y: hidden;
             display: block;
         }
-        #row1,#row2 {
+        td {
             padding-top: 0.06rem;
             padding-bottom: 0.06rem;
         }
@@ -27,22 +27,26 @@
     </tbody>
 </table>
 <script>
-    function CreateTable(arrayConfig){
+    function CreateTable(lenght){
         var body = document.body,
             tbl  = document.getElementsByClassName("scroll")[0];
-        lenght =5;
         for(var i = 0; i < lenght; i++){
             var tr = tbl.insertRow();
+            var td = tr.insertCell(0);
             var rowId="row"+i;
-            tr.id=rowId;
+            td.id=rowId;
         }
         body.appendChild(tbl);
         sessionStorage.setItem("currentRowIndex",0);
         for(var i = 0; i < lenght; i++){
             var rowId="#row"+i;
             $(rowId).load("./scripts/row.html",function () {
-                var next = parseInt(sessionStorage.getItem("currentRowIndex"))+1;
-                sessionStorage.setItem("currentRowIndex",next);
+                var current =parseInt(sessionStorage.getItem("currentRowIndex"));
+                var button = document.getElementsByClassName("btnImage")[current];
+                button.onclick = function () {
+                 ClickClaim(current);
+                };
+                sessionStorage.setItem("currentRowIndex",current+1);
             });
         }
     }
@@ -68,16 +72,13 @@
         }
         return bubbleSort(array);
     }
-    function Log(text) {
-        var t = document.createTextNode(text);
-        document.body.appendChild(t);
-    }
     jQuery.get("config/CrossPromotionConfig.txt", function (data) {
         var obj = JSON.parse(data);
         var dict = obj["items"];
         var arr = ConvertToArray(dict);
-        sessionStorage.setItem("Config",JSON.stringify(arr));
-        CreateTable(arr);
+        var text = JSON.stringify(arr);
+        sessionStorage.setItem("Config",text);
+        CreateTable(arr.length);
     })
 </script>
 
