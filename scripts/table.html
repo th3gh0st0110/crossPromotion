@@ -20,6 +20,35 @@
         }
     </style>
     <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        function Achievement() {
+            this.id =1;
+            this.progress=0;
+            this.isClaimed = false;
+        }
+        function Data() {
+            this.achievements =[];
+        }
+        function AchievementConfig() {
+            this.id=1;
+            this.name="";
+            this.description="";
+            this.icon="";
+            this.reward=0;
+            this.rewardType="Soul";
+            this.require =1;
+            this.showProgress=true;
+        }
+        function Config() {
+            this.items = [];
+
+            this.GetConfigOfIndex= function (index) {
+                return this.items[index];
+            }
+        }
+        var AchievementProgress = new Data();
+        var AchievementConfig = new Config();
+    </script>
 </head>
 <body>
 <table class="scroll">
@@ -72,57 +101,32 @@
         }
         return bubbleSort(array);
     }
-    function getAllUrlParams(url) {
-
-        // get query string from url (optional) or window
+    function GetAllUrlParams(url) {
+        // http://example.com/?product=shirt&color=blue&newuser&size=m
         var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
-
-        // we'll store the parameters here
         var obj = {};
-
-        // if query string exists
         if (queryString) {
-
-            // stuff after # is not part of query string, so get rid of it
             queryString = queryString.split('#')[0];
-
-            // split our query string into its component parts
             var arr = queryString.split('&');
-
             for (var i=0; i<arr.length; i++) {
-                // separate the keys and the values
                 var a = arr[i].split('=');
-
-                // in case params look like: list[]=thing1&list[]=thing2
                 var paramNum = undefined;
                 var paramName = a[0].replace(/\[\d*\]/, function(v) {
                     paramNum = v.slice(1,-1);
                     return '';
                 });
-
-                // set parameter value (use 'true' if empty)
                 var paramValue = typeof(a[1])==='undefined' ? true : a[1];
-
-                // (optional) keep case consistent
-
-                // if parameter name already exists
                 if (obj[paramName]) {
-                    // convert value to array (if still string)
                     if (typeof obj[paramName] === 'string') {
                         obj[paramName] = [obj[paramName]];
                     }
-                    // if no array index number specified...
                     if (typeof paramNum === 'undefined') {
-                        // put the value on the end of the array
                         obj[paramName].push(paramValue);
                     }
-                    // if array index number specified...
                     else {
-                        // put the value at that index number
                         obj[paramName][paramNum] = paramValue;
                     }
                 }
-                // if param name doesn't exist yet, set it
                 else {
                     obj[paramName] = paramValue;
                 }
@@ -131,12 +135,35 @@
 
         return obj;
     }
+    function GetData() {
+        var url ="http://example.com/?data="+'{\n' +
+            '  "achievements": [\n' +
+            '  {\n' +
+            '    "isClaimed": true,\n' +
+            '    "progress": 10,\n' +
+            '    "id": 1\n' +
+            '  },\n' +
+            '  {\n' +
+            '    "isClaimed": false,\n' +
+            '    "progress": 10,\n' +
+            '    "id": 2\n' +
+            '  },\n' +
+            '  {\n' +
+            '    "isClaimed": true,\n' +
+            '    "progress": 100,\n' +
+            '    "id": 3\n' +
+            '  }\n' +
+            ']\n' +
+            '}';
+        var json = GetAllUrlParams(url).data;
+        return json;
+    }
     jQuery.get("config/CrossPromotionConfig.txt", function (data) {
         var obj = JSON.parse(data);
         var dict = obj["items"];
         var arr = ConvertToArray(dict);
-        var text = JSON.stringify(arr);
-        sessionStorage.setItem("Config",text);
+        AchievementConfig.items = arr;
+        AchievementProgress=JSON.parse(GetData());
         CreateTable(arr.length);
     })
 

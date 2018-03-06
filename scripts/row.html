@@ -100,7 +100,8 @@
             font-size: 0.14rem;
         }
     </style>
-    <script></script>
+    <script>
+    </script>
 </head>
 <body>
 <div id="rowbackground">
@@ -120,47 +121,76 @@
 </body>
 <script>
 
-    function ApplyInfo(rowIndex,config) {
-        SetIcon(rowIndex,config);
-        SetName(rowIndex,config);
-        SetDesc(rowIndex,config);
-        SetButtonImage(rowIndex,config);
-        SetRewardValue(rowIndex,config);
-        SetRewardType(rowIndex,config);
+    function ApplyInfo(rowIndex, config) {
+        SetIcon(rowIndex, config);
+        SetName(rowIndex, config);
+        SetDesc(rowIndex, config);
+        SetRewardValue(rowIndex, config);
+        SetRewardType(rowIndex, config);
+
+        var data = GetData(config.id);
+        var require = config.require;
+        var progress = data.progress;
+        SetProgressText(rowIndex, progress + "/" + require);
+        SetProgressValue(rowIndex, progress / require);
+
+        if (progress < require) {
+            status = "uncomplete";
+        } else {
+            if (data.isClaimed) {
+                status = "claimed";
+            } else {
+                status = "completed";
+            }
+        }
+        SetButtonImage(rowIndex, status);
+
     }
 
-    function SetIcon(rowIndex,config) {
+    function SetIcon(rowIndex, config) {
         var iconUrl = "./images/" + config["icon"];
         document.getElementsByClassName("icon")[rowIndex].getElementsByTagName("img")[0].src = iconUrl;
     }
 
-    function SetName(rowIndex,config) {
-        var name = config["name"];
+    function SetName(rowIndex, config) {
+        var name = config.name;
         document.getElementsByClassName("achievementName")[rowIndex].innerHTML = name;
     }
 
-    function SetDesc(rowIndex,config) {
-        var name = config["description"];
+    function SetDesc(rowIndex, config) {
+        var name = config.description;
         document.getElementsByClassName("desc")[rowIndex].innerHTML = name;
     }
 
-    function SetButtonImage(rowIndex,config) {
-        var iconUrl = "./images/btn_claim.png";
+    function SetButtonImage(rowIndex, status) {
+        var iconUrl = "btn_disable.png";
+        switch (status) {
+            case "uncomplete":
+                break;
+            case "completed":
+                iconUrl = "btn_claim.png";
+                break;
+            case "claimed":
+                iconUrl = "btn_claimed.png";
+                break
+        }
+        iconUrl = "./images/" + iconUrl;
         document.getElementsByClassName("btnImage")[rowIndex].getElementsByTagName("img")[0].src = iconUrl;
     }
 
-    function SetRewardValue(rowIndex,config) {
-        var name = config["reward"];
+    function SetRewardValue(rowIndex, config) {
+        var name = config.reward;
         document.getElementsByClassName("rewardValue")[rowIndex].innerHTML = name;
     }
 
-    function SetRewardType(rowIndex,config) {
-        var name = config["rewardType"];
+    function SetRewardType(rowIndex, config) {
+        var name = config.rewardType;
         document.getElementsByClassName("rewardType")[rowIndex].innerHTML = name;
     }
 
     function SetProgressValue(index, progress) {
         var elem = document.getElementsByClassName("progressForeground")[index];
+        if (progress > 1) progress = 1;
         elem.style.width = progress * 5 + "rem";
     }
 
@@ -170,18 +200,45 @@
     }
 
     function ClickClaim(rowIndex) {
-        SetProgressValue(rowIndex, 0.5);
-        SetProgressText(rowIndex, 100);
+        var config = GetConfig(rowIndex);
+        var data = GetData(config.id);
+        if (!data.isClaimed) {
+            if (data.progress < config.require) {
+                alert("Uncompleted");
+
+            } else {
+                SetButtonImage(rowIndex, "claimed");
+                ClaimReward(config.id);
+            }
+        }
     }
+
+    function ClaimReward(id) {
+        var data = GetData(id);
+        data.isClaimed = true;
+    }
+
     function Log(text) {
         var t = document.createTextNode(text);
         document.body.appendChild(t);
     }
+
     function GetConfig(rowIndex) {
-        var Config = sessionStorage.getItem("Config");
-        var obj = JSON.parse(Config);
-        return obj[rowIndex];
+        return AchievementConfig.GetConfigOfIndex(rowIndex);
     }
-    ApplyInfo(sessionStorage.getItem("currentRowIndex"),GetConfig(sessionStorage.getItem("currentRowIndex")));
+
+    function GetData(id) {
+        for (i = 0; i < AchievementProgress.achievements.length; i++) {
+            if (AchievementProgress.achievements[i].id == id) {
+                return AchievementProgress.achievements[i];
+            }
+        }
+        var a = new Achievement();
+        a.id = id;
+        AchievementProgress.achievements.push(a);
+        return a;
+    }
+
+    ApplyInfo(sessionStorage.getItem("currentRowIndex"), GetConfig(sessionStorage.getItem("currentRowIndex")));
 </script>
 </html>
