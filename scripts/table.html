@@ -40,7 +40,7 @@
         sessionStorage.setItem("currentRowIndex",0);
         for(var i = 0; i < lenght; i++){
             var rowId="#row"+i;
-            $(rowId).load("row.html",function () {
+            $(rowId).load("./scripts/row.html",function () {
                 var next = parseInt(sessionStorage.getItem("currentRowIndex"))+1;
                 sessionStorage.setItem("currentRowIndex",next);
             });
