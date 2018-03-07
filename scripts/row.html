@@ -133,14 +133,14 @@
         var progress = data.progress;
         SetProgressText(rowIndex, progress + "/" + require);
         SetProgressValue(rowIndex, progress / require);
-
-        if (progress < require) {
-            status = "uncomplete";
+        if (data.isClaimed) {
+            status = "claimed";
         } else {
-            if (data.isClaimed) {
-                status = "claimed";
-            } else {
+            if(progress<require){
+                status = "uncomplete";
+            }else{
                 status = "completed";
+
             }
         }
         SetButtonImage(rowIndex, status);
@@ -204,15 +204,26 @@
         var data = GetData(config.id);
         if (!data.isClaimed) {
             if (data.progress < config.require) {
-                alert("Uncompleted");
+                var cookie = config.cookie;
+                var split = cookie.split("=");
+                if(split.length>0){
+                    var type = split[0];
+                    switch (type){
+                        case "INSTALL_APP":
+                            if(split.length==2){
+                                var id = split[1];
+                                ShowAlert(id);
+                            }
+                            break;
+                    }
+                }
 
             } else {
                 SetButtonImage(rowIndex, "claimed");
                 ClaimReward(config.id);
-                window.location.href="uniwebview://reward?id="+config.id+"?value="+config.reward+  "&type="+config.rewardType;
+                window.location.href="uniwebview://reward?id="+config.id+"&value="+config.reward+  "&type="+config.rewardType;
             }
         }
-        window.location.href="uniwebview://clickAchievement?id="+config.id;
     }
 
     function ClaimReward(id) {
