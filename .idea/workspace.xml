@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="065f33f1-321b-40c2-af38-67b2fe21263e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change beforePath="$PROJECT_DIR$/scripts/popup.html" afterPath="$PROJECT_DIR$/scripts/popup.html" />
       <change beforePath="$PROJECT_DIR$/scripts/row.html" afterPath="$PROJECT_DIR$/scripts/row.html" />
+      <change beforePath="$PROJECT_DIR$/scripts/table.html" afterPath="$PROJECT_DIR$/scripts/table.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,21 +25,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="row.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="row.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/row.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="235" column="0" lean-forward="false" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="197" column="39" lean-forward="false" selection-start-line="197" selection-start-column="39" selection-end-line="197" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="table.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1360">
-              <caret line="151" column="5" lean-forward="true" selection-start-line="151" selection-start-column="5" selection-end-line="151" selection-end-column="5" />
+            <state relative-caret-position="391">
+              <caret line="157" column="18" lean-forward="true" selection-start-line="157" selection-start-column="18" selection-end-line="157" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -48,8 +48,8 @@
       <file leaf-file-name="popup.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/popup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="94" column="29" lean-forward="false" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="29" />
+            <state relative-caret-position="-323">
+              <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -155,10 +155,10 @@
         <option value="$PROJECT_DIR$/row.html" />
         <option value="$PROJECT_DIR$/table.html" />
         <option value="$PROJECT_DIR$/scripts/banner.html" />
-        <option value="$PROJECT_DIR$/scripts/table.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/popup.html" />
         <option value="$PROJECT_DIR$/scripts/row.html" />
+        <option value="$PROJECT_DIR$/scripts/table.html" />
       </list>
     </option>
   </component>
@@ -305,7 +305,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138238000" />
+    <option name="totallyTimeSpent" value="138867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -451,14 +451,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="151" column="5" lean-forward="true" selection-start-line="151" selection-start-column="5" selection-end-line="151" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/banner.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -477,16 +469,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/popup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="94" column="29" lean-forward="false" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="29" />
+        <state relative-caret-position="-323">
+          <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/row.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="235" column="0" lean-forward="false" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="197" column="39" lean-forward="false" selection-start-line="197" selection-start-column="39" selection-end-line="197" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="157" column="18" lean-forward="true" selection-start-line="157" selection-start-column="18" selection-end-line="157" selection-end-column="18" />
           <folding />
         </state>
       </provider>

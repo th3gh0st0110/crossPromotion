@@ -192,6 +192,11 @@
         var elem = document.getElementsByClassName("progressForeground")[index];
         if (progress > 1) progress = 1;
         elem.style.width = progress * 5 + "rem";
+        if(progress<=0){
+            elem.style.display="none";
+        }else{
+            elem.style.display="block";
+        }
     }
 
     function SetProgressText(index, text) {
