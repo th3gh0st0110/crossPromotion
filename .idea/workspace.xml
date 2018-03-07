@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="065f33f1-321b-40c2-af38-67b2fe21263e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/config/CrossPromotionConfig.txt" afterPath="$PROJECT_DIR$/config/CrossPromotionConfig.txt" />
-      <change beforePath="$PROJECT_DIR$/scripts/table.html" afterPath="$PROJECT_DIR$/scripts/table.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,21 +40,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="row.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="row.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/row.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
-              <caret line="216" column="0" lean-forward="true" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
+            <state relative-caret-position="251">
+              <caret line="187" column="49" lean-forward="false" selection-start-line="187" selection-start-column="49" selection-end-line="187" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="table.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+            <state relative-caret-position="357">
+              <caret line="21" column="12" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -117,6 +116,8 @@
       <find>Skip to content</find>
       <find>toLowerCase</find>
       <find>length</find>
+      <find>a</find>
+      <find>alert</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,9 +152,9 @@
         <option value="$PROJECT_DIR$/row.html" />
         <option value="$PROJECT_DIR$/table.html" />
         <option value="$PROJECT_DIR$/scripts/banner.html" />
-        <option value="$PROJECT_DIR$/scripts/row.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/table.html" />
+        <option value="$PROJECT_DIR$/scripts/row.html" />
       </list>
     </option>
   </component>
@@ -300,7 +301,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126864000" />
+    <option name="totallyTimeSpent" value="127446000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -463,18 +464,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/row.html">
+    <entry file="file://$PROJECT_DIR$/scripts/table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="216" column="0" lean-forward="true" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="21" column="12" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/table.html">
+    <entry file="file://$PROJECT_DIR$/scripts/row.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+        <state relative-caret-position="251">
+          <caret line="187" column="49" lean-forward="false" selection-start-line="187" selection-start-column="49" selection-end-line="187" selection-end-column="49" />
           <folding />
         </state>
       </provider>
