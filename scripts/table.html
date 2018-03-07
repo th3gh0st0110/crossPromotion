@@ -26,7 +26,7 @@
             this.isClaimed = false;
         }
         function Data() {
-            this.achievements =[];
+            this.items =[];
         }
         function AchievementConfig() {
             this.id=1;
@@ -55,7 +55,10 @@
     </tbody>
 </table>
 <script>
+    var tableLenght=0;
+    var curindex =0;
     function CreateTable(lenght){
+        tableLenght = lenght;
         var body = document.body,
             tbl  = document.getElementsByClassName("scroll")[0];
         for(var i = 0; i < lenght; i++){
@@ -65,16 +68,21 @@
             td.id=rowId;
         }
         body.appendChild(tbl);
-        sessionStorage.setItem("currentRowIndex",0);
-        for(var i = 0; i < lenght; i++){
-            var rowId="#row"+i;
+       IncludePage();
+    }
+    function IncludePage() {
+        if(curindex<tableLenght){
+            sessionStorage.setItem("currentRowIndex",curindex);
+            var rowId="#row"+curindex;
             $(rowId).load("./scripts/row.html",function () {
                 var current =parseInt(sessionStorage.getItem("currentRowIndex"));
                 var button = document.getElementsByClassName("btnImage")[current];
                 button.onclick = function () {
-                 ClickClaim(current);
+                    ClickClaim(current);
                 };
-                sessionStorage.setItem("currentRowIndex",current+1);
+                curindex+=1;
+                sessionStorage.setItem("currentRowIndex",curindex);
+                IncludePage();
             });
         }
     }
@@ -135,25 +143,7 @@
         return obj;
     }
     function GetData() {
-        var url ="http://example.com/?data="+'{\n' +
-            '  "achievements": [\n' +
-            '  {\n' +
-            '    "isClaimed": true,\n' +
-            '    "progress": 10,\n' +
-            '    "id": 1\n' +
-            '  },\n' +
-            '  {\n' +
-            '    "isClaimed": false,\n' +
-            '    "progress": 10,\n' +
-            '    "id": 2\n' +
-            '  },\n' +
-            '  {\n' +
-            '    "isClaimed": true,\n' +
-            '    "progress": 100,\n' +
-            '    "id": 3\n' +
-            '  }\n' +
-            ']\n' +
-            '}';
+        var url =decodeURI(location.href);
         var json = GetAllUrlParams(url).data;
         return json;
     }
@@ -164,7 +154,6 @@
         AchievementConfig.items = arr;
         AchievementProgress=JSON.parse(GetData());
         CreateTable(arr.length);
-        window.location.href="uniwebview://config?value="+data;
     })
 
 </script>

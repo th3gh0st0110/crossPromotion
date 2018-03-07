@@ -230,14 +230,14 @@
     }
 
     function GetData(id) {
-        for (i = 0; i < AchievementProgress.achievements.length; i++) {
-            if (AchievementProgress.achievements[i].id == id) {
-                return AchievementProgress.achievements[i];
+        for (i = 0; i < AchievementProgress.items.length; i++) {
+            if (AchievementProgress.items[i].id == id) {
+                return AchievementProgress.items[i];
             }
         }
         var a = new Achievement();
         a.id = id;
-        AchievementProgress.achievements.push(a);
+        AchievementProgress.items.push(a);
         return a;
     }
 
