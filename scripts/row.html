@@ -212,7 +212,8 @@
                         case "INSTALL_APP":
                             if(split.length==2){
                                 var id = split[1];
-                                ShowAlert(id);
+                                var text="Do you want install "+id;
+                                ShowConfirmPopup(text,function() { OpenAppMarket(id); });
                             }
                             break;
                     }
@@ -229,6 +230,9 @@
     function ClaimReward(id) {
         var data = GetData(id);
         data.isClaimed = true;
+    }
+    function OpenAppMarket(id) {
+        window.location.href="uniwebview://OpenApp?id="+id;
     }
 
     function Log(text) {
