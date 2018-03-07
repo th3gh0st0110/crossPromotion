@@ -227,6 +227,7 @@
             } else {
                 SetButtonImage(rowIndex, "claimed");
                 ClaimReward(config.id);
+                ShowErrorPopup("You receive "+config.reward+" "+config.rewardType);
                 window.location.href="uniwebview://reward?id="+config.id+"&value="+config.reward+  "&type="+config.rewardType;
             }
         }

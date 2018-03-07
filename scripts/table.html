@@ -153,7 +153,7 @@
 
     function GetData() {
         var url = decodeURI(location.href);
-        // url="http://asdasdasd/?data={\"items\":[{\"id\":1,\"progress\":0,\"isClaimed\":false}]}";
+         // url="http://asdasdasd/?data={\"items\":[{\"id\":1,\"progress\":1,\"isClaimed\":false}]}";
         var json = GetAllUrlParams(url).data;
         if(!json){
             json=JSON.stringify(new Data());
