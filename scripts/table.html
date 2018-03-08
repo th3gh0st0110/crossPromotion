@@ -68,7 +68,7 @@
         var body = document.body,
             tbl = document.getElementsByClassName("scroll")[0];
         for (var i = 0; i < lenght; i++) {
-            var tr = tbl.insertRow();
+            var tr = tbl.insertRow(i);
             var td = tr.insertCell(0);
             var rowId = "row" + i;
             td.id = rowId;
