@@ -79,7 +79,7 @@
             position: absolute;
             left: 1.30rem;
             bottom: 0.12rem;
-            width: 5rem;
+            width: 30%;
         }
 
         .progressForeground {
@@ -191,7 +191,7 @@
     function SetProgressValue(index, progress) {
         var elem = document.getElementsByClassName("progressForeground")[index];
         if (progress > 1) progress = 1;
-        elem.style.width = progress * 5 + "rem";
+        elem.style.width = progress * 30 + "%";
         if(progress<=0){
             elem.style.display="none";
         }else{
