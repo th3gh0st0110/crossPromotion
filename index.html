@@ -50,7 +50,11 @@
             overflow-y:hidden;
         }
     </style>
-    <script src="jquery-3.3.1.min.js"></script>
+    <script src="jquery-3.3.1.min.js">
+    </script>
+    <script>
+        document.documentElement.style.fontSize = 100 / (window.devicePixelRatio) + "px";
+    </script>
 </head>
 <body>
 <div id="bannerScript"></div>
@@ -60,9 +64,6 @@
     $("#bannerScript").load("./scripts/banner.html");
     $("#tableScript").load("./scripts/table.html");
     $("#popup").load("./scripts/popup.html");
-</script>
-<script>
-    document.documentElement.style.fontSize = 100 / (window.devicePixelRatio) + "px";
 </script>
 </body>
 </html>
