@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="065f33f1-321b-40c2-af38-67b2fe21263e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/scripts/row.html" afterPath="$PROJECT_DIR$/scripts/row.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/scripts/table.html" afterPath="$PROJECT_DIR$/scripts/table.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="row.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="row.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/row.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -45,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="table.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="167" column="61" lean-forward="false" selection-start-line="167" selection-start-column="61" selection-end-line="167" selection-end-column="61" />
+            <state relative-caret-position="357">
+              <caret line="160" column="8" lean-forward="false" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -169,8 +170,8 @@
         <option value="$PROJECT_DIR$/scripts/banner.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/popup.html" />
-        <option value="$PROJECT_DIR$/scripts/table.html" />
         <option value="$PROJECT_DIR$/scripts/row.html" />
+        <option value="$PROJECT_DIR$/scripts/table.html" />
       </list>
     </option>
   </component>
@@ -319,7 +320,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152182000" />
+    <option name="totallyTimeSpent" value="152785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -499,18 +500,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="167" column="61" lean-forward="false" selection-start-line="167" selection-start-column="61" selection-end-line="167" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/row.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="218" column="52" lean-forward="true" selection-start-line="218" selection-start-column="52" selection-end-line="218" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="160" column="8" lean-forward="false" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="8" />
           <folding />
         </state>
       </provider>
