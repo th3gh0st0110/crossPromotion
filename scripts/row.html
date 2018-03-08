@@ -92,6 +92,7 @@
             position: absolute;
             left: -0.05rem;
             bottom: -0.06rem;
+            width: 100%;
         }
 
         .progressText {
@@ -190,8 +191,6 @@
 
     function SetProgressValue(index, isComplete) {
         var elem = document.getElementsByClassName("progressForeground")[index];
-        var progress = (isComplete) ? 1 : 0;
-        elem.style.width = progress * 30 + "%";
         if (!isComplete) {
             elem.style.display = "none";
         } else {
