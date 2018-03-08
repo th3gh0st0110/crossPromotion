@@ -129,16 +129,15 @@
         SetRewardType(rowIndex, config);
 
         var data = GetData(config.id);
-        var require = config.require;
-        var progress = data.progress;
-        SetProgressText(rowIndex, progress + "/" + require);
-        SetProgressValue(rowIndex, progress / require);
+        var progress = data.isComplete;
+        SetProgressText(rowIndex, progress);
+        SetProgressValue(rowIndex, progress);
         if (data.isClaimed) {
             status = "claimed";
         } else {
-            if(progress<require){
+            if (!data.isComplete) {
                 status = "uncomplete";
-            }else{
+            } else {
                 status = "completed";
 
             }
@@ -188,48 +187,49 @@
         document.getElementsByClassName("rewardType")[rowIndex].innerHTML = name;
     }
 
-    function SetProgressValue(index, progress) {
+    function SetProgressValue(index, isComplete) {
         var elem = document.getElementsByClassName("progressForeground")[index];
-        if (progress > 1) progress = 1;
+        var progress = (isComplete) ? 1 : 0;
         elem.style.width = progress * 30 + "%";
-        if(progress<=0){
-            elem.style.display="none";
-        }else{
-            elem.style.display="block";
+        if (!isComplete) {
+            elem.style.display = "none";
+        } else {
+            elem.style.display = "block";
         }
     }
 
-    function SetProgressText(index, text) {
+    function SetProgressText(index, isComplete) {
         var elem2 = document.getElementsByClassName("progressText")[index];
-        elem2.innerText = text;
+        elem2.innerText = (isComplete) ? "1/1" : "0/1";
     }
 
     function ClickClaim(rowIndex) {
         var config = GetConfig(rowIndex);
         var data = GetData(config.id);
         if (!data.isClaimed) {
-            if (data.progress < config.require) {
-                var cookie = config.cookie;
-                var split = cookie.split("=");
-                if(split.length>0){
-                    var type = split[0];
-                    switch (type){
-                        case "INSTALL_APP":
-                            if(split.length==2){
-                                var id = split[1];
-                                var text="Do you want install "+id;
-                                ShowConfirmPopup(text,function() { OpenAppMarket(id); });
-                            }
-                            break;
-                    }
-                }
+            if (data.isComplete) {
+                var id = config.androidID;
+                if (IsIOS()) id = config.iosID;
+                var text ="Do you want to install game"+config.name+" to get rewards?";
+                ShowConfirmPopup(text, function () {
+                    OpenAppMarket(id);
+                });
 
             } else {
                 SetButtonImage(rowIndex, "claimed");
                 ClaimReward(config.id);
-                ShowErrorPopup("You receive "+config.reward+" "+config.rewardType);
-                window.location.href="uniwebview://reward?id="+config.id+"&value="+config.reward+  "&type="+config.rewardType;
+                ShowErrorPopup("You receive " + config.reward + " " + config.rewardType);
+                window.location.href = "uniwebview://reward?id=" + config.id + "&value=" + config.reward + "&type=" + config.rewardType;
             }
+        }
+    }
+
+    function IsIOS() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -237,8 +237,9 @@
         var data = GetData(id);
         data.isClaimed = true;
     }
+
     function OpenAppMarket(id) {
-        window.location.href="uniwebview://OpenApp?id="+id;
+        window.location.href = "uniwebview://OpenApp?id=" + id;
     }
 
     function Log(text) {

@@ -6,7 +6,7 @@
             display: block;
             left: 0;
             top: 1.02rem;
-            overflow-y:scroll;
+            overflow-y: scroll;
             overflow-x: hidden;
             width: 100vw;
         }
@@ -25,7 +25,7 @@
     <script>
         function Achievement() {
             this.id = 1;
-            this.progress = 0;
+            this.isComplete = false;
             this.isClaimed = false;
         }
 
@@ -40,7 +40,9 @@
             this.icon = "";
             this.reward = 0;
             this.rewardType = "Soul";
-            this.require = 1;
+            this.enable = true;
+            this.androidID = "";
+            this.iosID = "";
         }
 
         function Config() {
@@ -112,7 +114,8 @@
     function ConvertToArray(dict) {
         var array = new Array();
         for (var key in dict) {
-            array.push(dict[key]);
+            if (dict[key]["enable"])
+                array.push(dict[key]);
         }
         return bubbleSort(array);
     }
@@ -154,10 +157,10 @@
 
     function GetData() {
         var url = decodeURI(location.href);
-           // url="http://asdasdasd/?data={\"items\":[{\"id\":1,\"progress\":1,\"isClaimed\":false}]}";
+        // url="http://asdasdasd/?data={\"items\":[{\"id\":1,\"isComplete\":true,\"isClaimed\":false}]}";
         var json = GetAllUrlParams(url).data;
-        if(!json){
-            json=JSON.stringify(new Data());
+        if (!json) {
+            json = JSON.stringify(new Data());
         }
         return json;
     }

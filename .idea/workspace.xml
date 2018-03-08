@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="065f33f1-321b-40c2-af38-67b2fe21263e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/scripts/popup.html" afterPath="$PROJECT_DIR$/scripts/popup.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/config/CrossPromotionConfig.txt" afterPath="$PROJECT_DIR$/config/CrossPromotionConfig.txt" />
       <change beforePath="$PROJECT_DIR$/scripts/row.html" afterPath="$PROJECT_DIR$/scripts/row.html" />
+      <change beforePath="$PROJECT_DIR$/scripts/table.html" afterPath="$PROJECT_DIR$/scripts/table.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,28 +41,28 @@
       <file leaf-file-name="row.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/row.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="196" column="14" lean-forward="true" selection-start-line="196" selection-start-column="14" selection-end-line="196" selection-end-column="14" />
+            <state relative-caret-position="234">
+              <caret line="135" column="31" lean-forward="true" selection-start-line="135" selection-start-column="31" selection-end-line="135" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="table.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="156" column="13" lean-forward="false" selection-start-line="156" selection-start-column="13" selection-end-line="156" selection-end-column="13" />
+            <state relative-caret-position="340">
+              <caret line="114" column="32" lean-forward="true" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="popup.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="popup.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/popup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="56" lean-forward="true" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+            <state relative-caret-position="340">
+              <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -132,6 +134,8 @@
       <find>a</find>
       <find>alert</find>
       <find>Modal Example</find>
+      <find>SetProgressValue</find>
+      <find>require</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,10 +170,10 @@
         <option value="$PROJECT_DIR$/row.html" />
         <option value="$PROJECT_DIR$/table.html" />
         <option value="$PROJECT_DIR$/scripts/banner.html" />
-        <option value="$PROJECT_DIR$/scripts/table.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/scripts/row.html" />
         <option value="$PROJECT_DIR$/scripts/popup.html" />
+        <option value="$PROJECT_DIR$/scripts/row.html" />
+        <option value="$PROJECT_DIR$/scripts/table.html" />
       </list>
     </option>
   </component>
@@ -318,7 +322,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147378000" />
+    <option name="totallyTimeSpent" value="149688000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -490,26 +494,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/table.html">
+    <entry file="file://$PROJECT_DIR$/scripts/popup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="156" column="13" lean-forward="false" selection-start-line="156" selection-start-column="13" selection-end-line="156" selection-end-column="13" />
+        <state relative-caret-position="340">
+          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/row.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="196" column="14" lean-forward="true" selection-start-line="196" selection-start-column="14" selection-end-line="196" selection-end-column="14" />
+        <state relative-caret-position="234">
+          <caret line="135" column="31" lean-forward="true" selection-start-line="135" selection-start-column="31" selection-end-line="135" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/popup.html">
+    <entry file="file://$PROJECT_DIR$/scripts/table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="56" lean-forward="true" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+        <state relative-caret-position="340">
+          <caret line="114" column="32" lean-forward="true" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
           <folding />
         </state>
       </provider>
