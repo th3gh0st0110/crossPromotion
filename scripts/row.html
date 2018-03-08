@@ -210,7 +210,7 @@
             if (!data.isComplete) {
                 var id = config.androidID;
                 if (IsIOS()) id = config.iosID;
-                var text ="Do you want to install game"+config.name+" to get rewards?";
+                var text ="Do you want to install game "+config.name+" ?";
                 ShowConfirmPopup(text, function () {
                     OpenAppMarket(id);
                 });
