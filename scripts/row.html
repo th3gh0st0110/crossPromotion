@@ -207,7 +207,7 @@
         var config = GetConfig(rowIndex);
         var data = GetData(config.id);
         if (!data.isClaimed) {
-            if (data.isComplete) {
+            if (!data.isComplete) {
                 var id = config.androidID;
                 if (IsIOS()) id = config.iosID;
                 var text ="Do you want to install game"+config.name+" to get rewards?";
