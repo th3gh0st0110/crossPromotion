@@ -208,11 +208,9 @@
         var data = GetData(config.id);
         if (!data.isClaimed) {
             if (!data.isComplete) {
-                var id = config.androidID;
-                if (IsIOS()) id = config.iosID;
                 var text ="Do you want to install game "+config.name+" ?";
                 ShowConfirmPopup(text, function () {
-                    OpenAppMarket(id);
+                    OpenAppMarket(config.id);
                 });
 
             } else {
@@ -224,22 +222,13 @@
         }
     }
 
-    function IsIOS() {
-        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     function ClaimReward(id) {
         var data = GetData(id);
         data.isClaimed = true;
     }
 
-    function OpenAppMarket(id) {
-        window.location.href = "uniwebview://OpenApp?id=" + id;
+    function OpenAppMarket(appId) {
+        window.location.href = "uniwebview://OpenApp?id=" + appId;
     }
 
     function Log(text) {
