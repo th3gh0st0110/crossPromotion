@@ -34,13 +34,13 @@
             border: 0.2rem solid;
             border-image: url('./images/row_background.png');
             border-image-slice: 25 fill;
-        }
-        #textInPopup{
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            top: 0.12rem;
+        }
+        #textInPopup{
+            position: relative;
+            display: inline;
             font-size: 0.24rem;
             font-weight: bold;
         }
@@ -124,7 +124,7 @@
 
     function ShowConfirmPopup(text,functionYes) {
         modal.style.display = "block";
-        document.getElementById("textInPopup").textContent = text;
+        document.getElementById("textInPopup").innerHTML = text;
         document.getElementById("popupBtnNo").onclick = function () { modal.style.display="none"; };
         document.getElementById("popupBtnNo").style.display="block";
         document.getElementById("popupBtnYes").onclick=functionYes;
@@ -133,7 +133,7 @@
     }
     function ShowErrorPopup(text) {
         modal.style.display = "block";
-        document.getElementById("textInPopup").textContent = text;
+        document.getElementById("textInPopup").innerHTML = text;
         document.getElementById("popupBtnNo").style.display="none";
         document.getElementById("popupBtnYes").style.display="none";
         document.getElementById("popupBtnError").style.display="block";

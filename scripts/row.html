@@ -208,7 +208,8 @@
         var data = GetData(config.id);
         if (!data.isClaimed) {
             if (!data.isComplete) {
-                var text ="Do you want to install game "+config.name+" ?";
+                var n = config.name;
+                var text ="Do you want to install game "+n.fontcolor("#FF851B")+" ?";
                 ShowConfirmPopup(text, function () {
                     OpenAppMarket(config.id);
                 });
@@ -216,7 +217,9 @@
             } else {
                 SetButtonImage(rowIndex, "claimed");
                 ClaimReward(config.id);
-                ShowErrorPopup("You have received " + config.reward + " " + config.rewardType);
+                var value = config.reward.toString();
+                var type = config.rewardType.toString();
+                ShowErrorPopup("You have received " + value.fontcolor("#FF851B") + " " + type.fontcolor("#FF851B"));
                 window.location.href = "uniwebview://reward?id=" + config.id + "&value=" + config.reward + "&type=" + config.rewardType;
             }
         }
