@@ -12,7 +12,7 @@
         }
         #TextNoAvailableContainer{
             text-align: center;
-            display: table-cell;
+            display: none;
             vertical-align:middle;
             padding: 0;
             margin: 0;
@@ -187,7 +187,7 @@
 
     function GetData() {
         var url = decodeURI(location.href);
-         // url="http://asdasdasd/?data={\"items\":[{\"id\":1,\"isComplete\":true,\"isClaimed\":false,\"isValid\":true}]}";
+          // url="http://asdasdasd/?data={\"items\":[{\"id\":1,\"isComplete\":true,\"isClaimed\":false,\"isValid\":true}]}";
         var json = GetAllUrlParams(url).data;
         if (!json) {
             json = JSON.stringify(new Data());
