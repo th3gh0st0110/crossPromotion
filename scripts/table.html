@@ -10,6 +10,22 @@
             overflow-x: hidden;
             width: 100vw;
         }
+        #TextNoAvailableContainer{
+            text-align: center;
+            display: table-cell;
+            vertical-align:middle;
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+        #TextNoAvailable{
+            font-size: 0.4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            /*display: inline-block;*/
+            /*vertical-align: middle;*/
+        }
 
         tbody {
             display: block;
@@ -27,6 +43,7 @@
             this.id = 1;
             this.isComplete = false;
             this.isClaimed = false;
+            this.isValid = true;
         }
 
         function Data() {
@@ -62,6 +79,11 @@
     <tbody>
     </tbody>
 </table>
+<div id="TextNoAvailableContainer">
+    <div id="TextNoAvailable">
+        No available
+    </div>
+</div>
 <script>
     var tableLenght = 0;
     var curindex = 0;
@@ -114,10 +136,18 @@
     function ConvertToArray(dict) {
         var array = new Array();
         for (var key in dict) {
-            if (dict[key]["enable"])
+            if (dict[key]["enable"]&IsValid(dict[key]))
                 array.push(dict[key]);
         }
         return bubbleSort(array);
+    }
+    function IsValid(rowConfig) {
+        for(i=0;i<AchievementProgress.items.length;i++){
+            if(rowConfig["id"]==AchievementProgress.items[i].id&&!AchievementProgress.items[i].isValid){
+                return false;
+            }
+        }
+        return true;
     }
 
     function GetAllUrlParams(url) {
@@ -157,7 +187,7 @@
 
     function GetData() {
         var url = decodeURI(location.href);
-          // url="http://asdasdasd/?data={\"items\":[{\"id\":1,\"isComplete\":true,\"isClaimed\":false}]}";
+         url="http://asdasdasd/?data={\"items\":[{\"id\":1,\"isComplete\":true,\"isClaimed\":false,\"isValid\":true}]}";
         var json = GetAllUrlParams(url).data;
         if (!json) {
             json = JSON.stringify(new Data());
@@ -168,10 +198,15 @@
     jQuery.get("config/CrossPromotionConfig.txt", function (data) {
         var obj = JSON.parse(data);
         var dict = obj["items"];
+        AchievementProgress = JSON.parse(GetData());
         var arr = ConvertToArray(dict);
         AchievementConfig.items = arr;
-        AchievementProgress = JSON.parse(GetData());
-        CreateTable(arr.length);
+        if(arr.length>0){
+            document.getElementById("TextNoAvailableContainer").style.display="none";
+            CreateTable(arr.length);
+        }else{
+            document.getElementById("TextNoAvailableContainer").style.display="table-cell";
+        }
     })
 
 </script>
