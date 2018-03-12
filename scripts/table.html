@@ -78,7 +78,7 @@
 </head>
 <body>
 <table class="scroll">
-    <tbody>
+    <tbody div id="tBody">
     </tbody>
 </table>
 <div id="TextNoAvailableContainer">
@@ -92,8 +92,10 @@
 
     function CreateTable(lenght) {
         tableLenght = lenght;
+        curindex =0;
         var body = document.body,
             tbl = document.getElementsByClassName("scroll")[0];
+        document.getElementById("tBody").innerHTML="";
         for (var i = 0; i < lenght; i++) {
             var tr = tbl.insertRow(i);
             var td = tr.insertCell(0);
@@ -158,7 +160,7 @@
             if (dict[key]["enable"] & IsValid(dict[key]))
                 array.push(dict[key]);
         }
-        return bubbleSort(array);
+        return array;
     }
 
     function IsValid(rowConfig) {
@@ -256,13 +258,18 @@
         AchievementProgress = JSON.parse(GetData());
         var arr = ConvertToArray(dict);
         AchievementConfig.items = arr;
+        ShowTable();
+
+    })
+    function ShowTable() {
+        var arr = bubbleSort(AchievementConfig.items);
         if (arr.length > 0) {
             document.getElementById("TextNoAvailableContainer").style.display = "none";
             CreateTable(arr.length);
         } else {
             document.getElementById("TextNoAvailableContainer").style.display = "table-cell";
         }
-    })
+    }
 
 </script>
 
