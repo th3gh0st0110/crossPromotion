@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="065f33f1-321b-40c2-af38-67b2fe21263e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/config/CrossPromotionConfig.txt" afterPath="$PROJECT_DIR$/config/CrossPromotionConfig.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/tick.png" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/scripts/row.html" afterPath="$PROJECT_DIR$/scripts/row.html" />
       <change beforePath="$PROJECT_DIR$/scripts/table.html" afterPath="$PROJECT_DIR$/scripts/table.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,21 +38,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="row.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="row.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/row.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="213" column="20" lean-forward="true" selection-start-line="213" selection-start-column="20" selection-end-line="213" selection-end-column="20" />
+            <state relative-caret-position="289">
+              <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="table.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+            <state relative-caret-position="294">
+              <caret line="231" column="42" lean-forward="false" selection-start-line="231" selection-start-column="42" selection-end-line="231" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -84,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/scripts/banner.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+              <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -170,8 +172,8 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/popup.html" />
         <option value="$PROJECT_DIR$/scripts/banner.html" />
-        <option value="$PROJECT_DIR$/scripts/row.html" />
         <option value="$PROJECT_DIR$/scripts/table.html" />
+        <option value="$PROJECT_DIR$/scripts/row.html" />
       </list>
     </option>
   </component>
@@ -244,18 +246,18 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\N.T.T\Firebase\CrossPromotion\Test\app\images" />
-      <recent name="F:\N.T.T\Firebase\CrossPromotion\Test\app\scripts" />
-      <recent name="F:\N.T.T\Firebase\CrossPromotion\Test\app\config" />
-      <recent name="F:\N.T.T\Firebase\CrossPromotion\Test\app" />
-      <recent name="C:\xampp\htdocs\crossPromotion" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\N.T.T\Firebase\CrossPromotion\Test\app\images" />
       <recent name="F:\N.T.T\Firebase\CrossPromotion\Test\app" />
       <recent name="C:\xampp\htdocs\crossPromotion\fonts" />
       <recent name="C:\xampp\htdocs\crossPromotion\images" />
+      <recent name="C:\xampp\htdocs\crossPromotion" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\N.T.T\Firebase\CrossPromotion\Test\app\images" />
+      <recent name="F:\N.T.T\Firebase\CrossPromotion\Test\app\scripts" />
+      <recent name="F:\N.T.T\Firebase\CrossPromotion\Test\app\config" />
+      <recent name="F:\N.T.T\Firebase\CrossPromotion\Test\app" />
       <recent name="C:\xampp\htdocs\crossPromotion" />
     </key>
   </component>
@@ -321,12 +323,12 @@
       <workItem from="1520643706729" duration="2849000" />
       <workItem from="1520676502925" duration="27000" />
       <workItem from="1520676550322" duration="1397000" />
-      <workItem from="1520816284052" duration="5605000" />
+      <workItem from="1520816284052" duration="8484000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169023000" />
+    <option name="totallyTimeSpent" value="171902000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -493,23 +495,23 @@
     <entry file="file://$PROJECT_DIR$/scripts/banner.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/row.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="213" column="20" lean-forward="true" selection-start-line="213" selection-start-column="20" selection-end-line="213" selection-end-column="20" />
+          <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+        <state relative-caret-position="294">
+          <caret line="231" column="42" lean-forward="false" selection-start-line="231" selection-start-column="42" selection-end-line="231" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/row.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
           <folding />
         </state>
       </provider>

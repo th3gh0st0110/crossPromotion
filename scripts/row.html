@@ -35,6 +35,15 @@
             top: 0.42rem;
             font-size: 0.24rem;
         }
+        .desc img.icon_32
+        {
+            vertical-align: middle;
+            margin-top: -0.06rem;
+            margin-bottom: -0.02rem;
+            width: 0.24rem;
+            height: 0.24rem;
+            margin-left: 0.02rem;
+        }
 
         #buttonClaim {
             position: absolute;
@@ -109,7 +118,7 @@
 <div id="rowbackground">
     <div class="icon"><img src=""></div>
     <div class="achievementName"><b></b></div>
-    <div class="desc"></div>
+    <div class="desc"><img class="icon_32" src="./images/tick.png"></div>
     <div id="progressBackground">
         <div class="progressForeground"></div>
         <div class="progressText"></div>
@@ -160,7 +169,8 @@
 
     function SetDesc(rowIndex, config) {
         var name = config.description;
-        document.getElementsByClassName("desc")[rowIndex].innerHTML = name;
+        var element =  document.getElementsByClassName("desc")[rowIndex];
+        element.innerHTML=name+element.innerHTML;
     }
 
     function SetButtonImage(rowIndex, status) {
