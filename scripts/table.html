@@ -126,8 +126,10 @@
     }
 
     function Comparer(itemA, itemB) {
-        var val1 = ComparerInt(itemA.id, itemB.id);
-        return val1;
+        var val1=ComparerBoolean(IsClaimed(itemA.id),IsClaimed(itemB.id));
+        var val2=(val1!=0)?val1:ComparerBoolean(IsComplete(itemB.id),IsComplete(itemA.id));
+        var val3 =(val2!=0)?val2: ComparerInt(itemA.id, itemB.id);
+        return val3;
     }
 
     function ComparerInt(itemA, itemB) {
@@ -221,12 +223,31 @@
 
     function GetData() {
         var url = decodeURI(location.href);
-        // url="http://asdasdasd/?data={\"items\":[{\"id\":1,\"isComplete\":true,\"isClaimed\":false,\"isValid\":true}]}";
+         url="http://asdasdasd/?data={\n" +
+             "  \"items\": [\n" +
+             "    {\n" +
+             "      \"id\": 1,\n" +
+             "      \"isComplete\": true,\n" +
+             "      \"isClaimed\": true,\n" +
+             "      \"isValid\": true\n" +
+             "    },\n" +
+             "    {\n" +
+             "      \"id\": 2,\n" +
+             "      \"isComplete\": true,\n" +
+             "      \"isClaimed\": false,\n" +
+             "      \"isValid\": true\n" +
+             "    }\n" +
+             "  ]\n" +
+             "}";
         var json = GetAllUrlParams(url).data;
         if (!json) {
             json = JSON.stringify(new Data());
         }
         return json;
+    }
+    function Log(text) {
+        var t = document.createTextNode(text);
+        document.body.appendChild(t);
     }
 
     jQuery.get("config/CrossPromotionConfig.txt", function (data) {
