@@ -230,6 +230,8 @@
                 window.location.href = "uniwebview://reward?id=" + config.id + "&value=" + config.reward + "&type=" + config.rewardType;
                 ShowTable();
             }
+        }else{
+            ShowErrorPopup("You have received this reward");
         }
     }
 
