@@ -240,22 +240,22 @@
 
     function GetData() {
         var url = decodeURI(location.href);
-         url="http://asdasdasd/?data={\n" +
-             "  \"items\": [\n" +
-             "    {\n" +
-             "      \"id\": 1,\n" +
-             "      \"isComplete\": true,\n" +
-             "      \"isClaimed\": true,\n" +
-             "      \"isValid\": true\n" +
-             "    },\n" +
-             "    {\n" +
-             "      \"id\": 2,\n" +
-             "      \"isComplete\": true,\n" +
-             "      \"isClaimed\": false,\n" +
-             "      \"isValid\": true\n" +
-             "    }\n" +
-             "  ]\n" +
-             "}";
+         //url="http://asdasdasd/?data={\n" +
+         //    "  \"items\": [\n" +
+         //    "    {\n" +
+         //    "      \"id\": 1,\n" +
+         //    "      \"isComplete\": true,\n" +
+         //    "      \"isClaimed\": true,\n" +
+         //    "      \"isValid\": true\n" +
+         //    "    },\n" +
+         //    "    {\n" +
+         //    "      \"id\": 2,\n" +
+         //    "      \"isComplete\": true,\n" +
+         //    "      \"isClaimed\": false,\n" +
+         //    "      \"isValid\": true\n" +
+         //    "    }\n" +
+         //    "  ]\n" +
+         //    "}";
         var json = GetAllUrlParams(url).data;
         if (!json) {
             json = JSON.stringify(new Data());
